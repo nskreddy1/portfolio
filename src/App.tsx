@@ -658,6 +658,58 @@ const Achievements = () => {
   )
 }
 
+// Team Section
+const Team = () => {
+  const teamMembers = [
+    {
+      name: 'Neeli Manikanta',
+      role: 'Full Stack Developer',
+      description: 'Expert in building enterprise-grade web and mobile applications with focus on school management systems and automation.',
+      portfolio: 'https://neelimanikantaportfolio.onrender.com/',
+      initials: 'NM'
+    }
+  ]
+
+  return (
+    <section id="team" className="section team">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-tag">Collaborators</span>
+          <h2 className="section-title">
+            Meet The <span className="gradient-text">Team</span>
+          </h2>
+          <p className="section-subtitle">
+            Talented professionals I collaborate with on large-scale projects
+          </p>
+        </div>
+        <div className="team-grid">
+          {teamMembers.map((member) => (
+            <a
+              key={member.name}
+              href={member.portfolio}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="team-card glass-card"
+            >
+              <div className="team-avatar">
+                <span>{member.initials}</span>
+              </div>
+              <div className="team-info">
+                <h3 className="team-name">{member.name}</h3>
+                <div className="team-role">{member.role}</div>
+                <p className="team-description">{member.description}</p>
+              </div>
+              <div className="team-link">
+                View Portfolio →
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 // CTA Section
 const CtaSection = () => {
   return (
@@ -773,6 +825,7 @@ function App() {
         <Projects />
         <Certifications />
         <Achievements />
+        <Team />
         <CtaSection />
         <Contact />
       </main>

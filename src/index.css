@@ -899,7 +899,7 @@ body {
 }
 
 .experience-achievements li::before {
-  content: '▹';
+  content: 'â–¹';
   position: absolute;
   left: 0;
   color: var(--color-accent-primary);
@@ -995,7 +995,7 @@ body {
 }
 
 .project-features li::before {
-  content: '✓';
+  content: 'âœ“';
   position: absolute;
   left: 0;
   color: var(--color-accent-tertiary);
@@ -1378,6 +1378,12 @@ body {
   .certifications-grid {
     grid-template-columns: 1fr;
   }
+
+  .services-grid,
+  .achievements-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1404,5 +1410,107 @@ body {
 
   .trust-badge {
     padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+/* Team Section */
+.team {
+  background: var(--color-bg-primary);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-card {
+  padding: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent-primary);
+}
+
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-bg-primary);
+  flex-shrink: 0;
+}
+
+.team-info {
+  flex: 1;
+}
+
+.team-name {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-primary);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.team-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.team-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-primary);
+  font-weight: 500;
+  margin-left: var(--spacing-md);
+  display: none;
+}
+
+.team-card:hover .team-link {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-link {
+    margin-left: 0;
+    margin-top: var(--spacing-md);
+  }
+}
+
+/* Force Mobile Layouts */
+@media (max-width: 768px) {
+
+  .certifications-grid,
+  .services-grid,
+  .achievements-grid,
+  .team-grid {
+    grid-template-columns: 1fr !important;
   }
 }
