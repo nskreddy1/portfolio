@@ -1,5 +1,6 @@
 import './index.css'
 import { useState, useEffect, useRef } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 // Animated Particles Background
 const ParticleBackground = () => {
@@ -830,6 +831,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Analytics />
     </>
   )
 }
