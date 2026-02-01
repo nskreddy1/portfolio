@@ -446,7 +446,7 @@ const Experience = () => {
             </div>
             <ul className="experience-achievements">
               {achievements.map((achievement, index) => (
-                <li key={index}>{achievement}</li>
+                <li key={index}>{ achievement}</li>
               ))}
             </ul>
           </div>
