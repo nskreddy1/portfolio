@@ -407,6 +407,7 @@ const Services = () => {
     </section>
   )
 }
+const sanitize = (s: string) => s.replace(/[^\x00-\x7F]/g, '')
 
 // Experience Component
 const Experience = () => {
@@ -439,14 +440,14 @@ const Experience = () => {
               </div>
               <div className="experience-meta">
                 <div className="experience-date">
-                  <span className="date-badge">Feb 2025 – Present</span>
+                  <span className="date-badge">Feb 2025 - Present</span>
                 </div>
                 <div className="experience-location">📍 Bengaluru, India</div>
               </div>
             </div>
             <ul className="experience-achievements">
               {achievements.map((achievement, index) => (
-                <li key={index}>{ achievement}</li>
+                <li key={index}>{ sanitize(achievement) }</li>
               ))}
             </ul>
           </div>
@@ -455,6 +456,53 @@ const Experience = () => {
     </section>
   )
 }
+// // Experience Component
+// const Experience = () => {
+//   const achievements = [
+//     'Owned development of multiple Spring Boot microservices handling high-volume production traffic with 99%+ availability',
+//     'Led testing initiatives by implementing JUnit and Mockito test suites, achieving 80%+ code coverage',
+//     'Designed a fault-tolerant retry mechanism for critical order-processing workflow, eliminating manual interventions',
+//     'Diagnosed and fixed service-layer logic bugs, improving system reliability and user experience',
+//     'Built Groovy-based backend integrations enabling real-time UI notifications'
+//   ]
+
+//   return (
+//     <section id="experience" className="section experience">
+//       <div className="container">
+//         <div className="section-header">
+//           <span className="section-tag">Experience</span>
+//           <h2 className="section-title">
+//             Where I've Made <span className="gradient-text">Impact</span>
+//           </h2>
+//         </div>
+//         <div className="experience-timeline">
+//           <div className="experience-card glass-card">
+//             <div className="experience-header">
+//               <div className="experience-company-info">
+//                 <div className="company-logo">Z</div>
+//                 <div>
+//                   <div className="experience-company">Zensar Technologies</div>
+//                   <div className="experience-role">Junior Software Engineer</div>
+//                 </div>
+//               </div>
+//               <div className="experience-meta">
+//                 <div className="experience-date">
+//                   <span className="date-badge">Feb 2025 – Present</span>
+//                 </div>
+//                 <div className="experience-location">📍 Bengaluru, India</div>
+//               </div>
+//             </div>
+//             <ul className="experience-achievements">
+//               {achievements.map((achievement, index) => (
+//                 <li key={index}>{ achievement}</li>
+//               ))}
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
 
 // Projects Component with Real Images
 const Projects = () => {
