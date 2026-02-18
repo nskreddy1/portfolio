@@ -899,7 +899,7 @@ body {
 }
 
 .experience-achievements li::before {
-  content: 'â–¹';
+  content: '\25B9';
   position: absolute;
   left: 0;
   color: var(--color-accent-primary);
@@ -995,7 +995,7 @@ body {
 }
 
 .project-features li::before {
-  content: 'âœ“';
+  content: '\2713';
   position: absolute;
   left: 0;
   color: var(--color-accent-tertiary);
